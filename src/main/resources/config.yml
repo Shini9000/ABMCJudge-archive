@@ -1,0 +1,8 @@
+#MySQL database: (Using MariaDB server type)
+hostname: 'localhost'
+port: '3306' # use 3308 if not working
+database: 'abmcjudge' #automatically created if it does not exist
+user: 'root'
+password: ''
+
+

@@ -1,0 +1,22 @@
+name: ABMCJudge
+version: '${version}'
+main: net.abmc.shini9000.ABMCJudge
+api-version: '1.20'
+load: STARTUP
+depend: [PlotSquared, LuckPerms]
+authors: [Shini9000]
+website: https://github.com/Shini9000
+
+commands:
+  submit:
+    description: Open the submission GUI/plot overview.
+  judge:
+    description: Access all submitted plots.
+  ptitle:
+    description: Edit plot title.
+  plore:
+    description: Edit plot lore.
+  pinfo:
+    description: A judge command to check the plot overview of other plots.
+  pcomment:
+    description: Write a comment for a plot(for judges).
