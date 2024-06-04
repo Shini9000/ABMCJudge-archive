@@ -51,11 +51,13 @@ public class Submit implements CommandExecutor {
             return true;
         }
 
+
         sqlUtils.setPlotTable(player);
 
         sqlUtils.addPlotID(id.toString());
         new PlotOverviewMenu(ABMCJudge.getPlayerMenuUtils(player)).open();
         return true;
+
     }
 
 }

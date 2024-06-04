@@ -60,12 +60,12 @@ public class PlotLore implements CommandExecutor {
             TextComponent loreAdd = new TextComponent(ChatColor.BLUE + "[Add lore]");
             TextComponent loreEdit = new TextComponent(ChatColor.GREEN + "[Edit lore] ");
 
-            loreEdit.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/plore add "));
-            loreEdit.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+            loreAdd.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/plore add "));
+            loreAdd.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                     new ComponentBuilder(ChatColor.GRAY + "Click to add lore").create()));
 
-            loreAdd.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/plore edit "));
-            loreAdd.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+            loreEdit.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/plore edit "));
+            loreEdit.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                     new ComponentBuilder(ChatColor.GRAY + "Click to edit lore").create()));
 
             player.spigot().sendMessage(loreAdd, loreEdit);

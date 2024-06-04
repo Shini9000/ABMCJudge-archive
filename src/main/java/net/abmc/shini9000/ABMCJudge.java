@@ -27,6 +27,9 @@ public final class ABMCJudge extends JavaPlugin implements Listener {
     public void onEnable() {
         Bukkit.getConsoleSender().sendMessage("Enabling ABMCJudge!");
         Bukkit.getConsoleSender().sendMessage("Version: " + this.getPluginMeta().getVersion());
+        Bukkit.getConsoleSender().sendMessage("+ Judge menu get world of plot!");
+
+
 
         getConfig().options().copyDefaults();
         saveDefaultConfig();

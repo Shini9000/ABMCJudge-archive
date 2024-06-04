@@ -51,15 +51,15 @@ public class PlotComment implements CommandExecutor {
         }
 
         if (args.length == 0) {
-            TextComponent comEdit = new TextComponent(ChatColor.GREEN + "[Add comment] ");
-            TextComponent comAdd = new TextComponent(ChatColor.BLUE + "[Edit comment]");
+            TextComponent comAdd = new TextComponent(ChatColor.GREEN + "[Add comment] ");
+            TextComponent comEdit = new TextComponent(ChatColor.BLUE + "[Edit comment]");
 
-            comEdit.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/pcomment add "));
-            comEdit.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+            comAdd.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/pcomment add "));
+            comAdd.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                     new ComponentBuilder(ChatColor.GRAY + "Click to add a comment").create()));
 
-            comAdd.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/pcomment edit "));
-            comAdd.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+            comEdit.setClickEvent(new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND, "/pcomment edit "));
+            comEdit.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT,
                     new ComponentBuilder(ChatColor.GRAY + "Click to edit a comment").create()));
 
             p.spigot().sendMessage(comEdit, comAdd);
@@ -68,7 +68,7 @@ public class PlotComment implements CommandExecutor {
         }
 
         switch(args[0].toLowerCase()) {
-            case "add" -> {
+            case "edit" -> {
                 List<String> comment = new ArrayList<>();
 
                 for (String s : args) {
@@ -80,7 +80,7 @@ public class PlotComment implements CommandExecutor {
                 p.sendMessage(ChatColor.GOLD + "Comment updated");
                 break;
             }
-            case "edit" -> {
+            case "add" -> {
                 List<String> comadd = new ArrayList<>();
                 List<String> orcom = new ArrayList<>();
 

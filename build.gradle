@@ -3,7 +3,7 @@ plugins {
 }
 
 group = 'net.abmc.shini9000'
-version = '2.18'
+version = '2.24'
 
 repositories {
     mavenCentral()

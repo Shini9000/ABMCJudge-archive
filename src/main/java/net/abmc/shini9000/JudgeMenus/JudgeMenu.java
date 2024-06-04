@@ -1,5 +1,6 @@
 package net.abmc.shini9000.JudgeMenus;
 
+import com.plotsquared.core.plot.Plot;
 import net.abmc.shini9000.ABMCJudge;
 import net.abmc.shini9000.Menu;
 import net.abmc.shini9000.Utils.PlayerMenuUtils;
@@ -46,7 +47,7 @@ public class JudgeMenu extends Menu {
 
         switch (e.getCurrentItem().getType()) {
             case ENCHANTED_BOOK -> { new SubmittedMenu(playerMenuUtils).open(); break;}
-            case MOJANG_BANNER_PATTERN -> {
+            case BOOK -> {
 //                if(PlotUtils.getId(p) != null && exists)
                     new JudgePlotInfoMenu(playerMenuUtils).open();
 //                // remove v
@@ -64,11 +65,12 @@ public class JudgeMenu extends Menu {
     public void setMenuItems() {
         String idmsg;
         if(PlotUtils.getId(p) != null) idmsg = "Plot ID: " + PlotUtils.getId(p).toString();
+        if(PlotUtils.getId(p) != null) idmsg = "Plot ID: " + PlotUtils.getWorld(p) + PlotUtils.getId(p).toString();
         else idmsg = ChatColor.RED + "You must stand on a plot";
 
         inventory.setItem(3, utils.createGuiItem(Material.ENCHANTED_BOOK,
                 ChatColor.GOLD + "Plot submissions", 1, ""));
-        inventory.setItem(5, Utils.createGuiItem(Material.MOJANG_BANNER_PATTERN,
+        inventory.setItem(5, Utils.createGuiItem(Material.BOOK,
                 ChatColor.YELLOW + "Current plot info", 1, idmsg));
     }
 }

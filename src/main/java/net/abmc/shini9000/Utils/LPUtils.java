@@ -24,7 +24,7 @@ public class LPUtils {
 
         List<String> finalGroup = new ArrayList<>();
 
-        getAllGroups(player).thenApplyAsync(allGroups -> {
+        getAllGroups(player).thenAcceptAsync(allGroups -> {
             for(int i = 0; i < allGroups.size(); i++){
                 for(int j = 0; j < creativeGroups().size(); j++){
                     if(allGroups.get(i).contains(creativeGroups().get(j))){
@@ -32,10 +32,8 @@ public class LPUtils {
                     }
                 }
             }
-            return String.join(", ", finalGroup);
-            //return "A";
         });
-        return "B";
+        return String.join("" + finalGroup);
     }
 
     public CompletableFuture<List<String>> getAllGroups(OfflinePlayer player){
